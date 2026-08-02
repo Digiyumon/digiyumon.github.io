@@ -1,8 +1,8 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import { remarkReadingTime } from './remark-reading-time.mjs';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,15 +10,14 @@ export default defineConfig({
   // For a GitHub Pages project site, `site` is the user/org domain and `base`
   // is the repository name. Drop `base` (or set it to '/') for a custom domain
   // or a `<user>.github.io` root site.
-  site: 'https://kpab.github.io',
-  base: '/astro-keel',
+  site: "https://digiyumon.github.io",
   integrations: [mdx(), sitemap()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
     // Dual Shiki themes; `defaultColor: false` emits CSS variables
     // (--shiki-light / --shiki-dark) so global.css can switch with the theme.
     shikiConfig: {
-      themes: { light: 'github-light', dark: 'github-dark' },
+      themes: { light: "github-light", dark: "github-dark" },
       defaultColor: false,
       wrap: true,
     },
