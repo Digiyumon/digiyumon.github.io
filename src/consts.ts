@@ -3,15 +3,15 @@
 
 export const SITE = {
   /** Site name — used in the header brand, <title>, and og:site_name. */
-  title: 'Astro Keel',
+  title: 'Alejandro Ojeda-Celis',
   /** Default meta description for pages that don't set their own. */
-  description: 'A minimal, neutral, and modern portfolio and blog theme for Astro.',
+  description: 'Data & Software Engineer specializing in Python ETL pipelines, SQL performance tuning, and full-stack development.',
   /** Description of the RSS feed at /rss.xml. */
-  rssDescription: 'Notes, essays, and release logs from Astro Keel.',
+  rssDescription: 'Project logs and technical notes from Alejandro Ojeda-Celis.',
   /** Default social share image, relative to the site root (see public/). */
   ogImage: '/og.jpg',
   /** Footer credit line. */
-  footerText: 'Built with Astro Keel.',
+  footerText: '© 2026 Alejandro Ojeda-Celis. Built with Astro.',
 } as const;
 
 /** Header navigation. `href` is relative to the site root; the configured
@@ -19,7 +19,5 @@ export const SITE = {
 export const NAV_ITEMS = [
   { href: '/', label: 'Home' },
   { href: '/about/', label: 'About' },
-  { href: '/works/', label: 'Works' },
-  { href: '/blog/', label: 'Blog' },
-  { href: '/search/', label: 'Search' },
+  { href: '/works/', label: 'Projects' }, 
 ] as const;
