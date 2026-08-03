@@ -1,0 +1,31 @@
+---
+title: "Interactive Reaction Tester Developer & Data Architect"
+description: "A full-stack, event-driven web application capturing and analyzing real time millisecond-precise user reaction times using TypeScript, Supabase, and SQL."
+tech:
+  - TypeScript
+  - Python
+  - SQL
+  - PostgreSQL (Supabase)
+order: 1
+publishDate: 2026-07-01
+---
+
+## Overview
+
+Designed and deployed a full-stack, event-driven web application engineered to capture, store, and analyze user reaction times with millisecond precision to simulated gaming scenarios.
+
+## Technical Architecture & Database Design
+
+Architected a relational database schema in PostgreSQL on Supabase utilizing a two-tier data architecture. The design optimizes `UUID` configurations for user security and sequential `BIGINT` indexing for fast analytical queries on large datasets.
+
+```sql
+-- Advanced analytical query example: Calculating global rolling averages and personal best milestones
+SELECT
+    user_id,
+    game_scenario,
+    reaction_time_ms,
+    AVG(reaction_time_ms) OVER (PARTITION BY game_scenario) AS global_rolling_avg,
+    MIN(reaction_time_ms) OVER (PARTITION BY user_id, game_scenario) AS personal_best
+FROM
+    reaction_logs;
+```

@@ -1,150 +1,128 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
 import { withBase } from '../lib/url';
-
-const works = (await getCollection('works'))
-  .sort((a, b) => {
-    const byDate = b.data.publishDate.getTime() - a.data.publishDate.getTime();
-    return byDate || (a.data.order ?? 999) - (b.data.order ?? 999);
-  })
-  .slice(0, 3);
-
-const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
-  .slice(0, 3);
-
-const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  }).format(date);
 ---
 
-<BaseLayout
-  title="Astro Keel"
-  description="A minimal portfolio and writing theme for careful technical work."
->
-  <section class="hero section">
-    <p class="eyebrow">Portfolio / writing / systems notes</p>
-    <h1>Structural minimalism for careful digital work.</h1>
+<BaseLayout title="Home" description="Portfolio and engineering profile of Alejandro Ojeda-Celis.">
+  <!-- Hero Section -->
+  <section class="page-head section hero-section">
+    <p class="eyebrow">Alejandro Ojeda-Celis</p>
+    <h1>Software & Data Engineer</h1>
     <p class="lead">
-      Astro Keel gives projects, essays, and professional notes a disciplined frame:
-      editorial type, measured rhythm, and a single accent carried through fine structural
-      rules.
+      Building scalable Python ETL pipelines, optimizing PostgreSQL databases, and streamlining enterprise workflows.
     </p>
-    <div class="action-row" aria-label="Primary links">
-      <a class="button" href={withBase('/works/')}>View works</a>
-      <a class="text-link" href={withBase('/blog/')}>Read notes</a>
+    <div class="hero-actions">
+      <a href={withBase('/works/')} class="btn primary-btn">View Featured Works</a>
+      <a href="/Alejandro_Ojeda-Celis_Resume_8-2-26.pdf" target="_blank" class="btn secondary-btn">Download Resume (PDF)</a>
     </div>
   </section>
 
-  <section class="section split-overview" aria-label="Theme overview">
+  <!-- Core Competencies Grid -->
+  <section class="section">
+    <p class="eyebrow">Core Competencies</p>
+    <div class="skills-grid">
+      <article class="skill-card">
+        <h3>Data Engineering</h3>
+        <p>Python (Pandas), Google Cloud Platform, BigQuery, Automated ETL Ingestion & Cron Jobs</p>
+      </article>
+      <article class="skill-card">
+        <h3>Database Architecture</h3>
+        <p>PostgreSQL, Supabase, Advanced SQL (Window Functions, Aggregations, Performance Tuning)</p>
+      </article>
+      <article class="skill-card">
+        <h3>Full-Stack & Systems</h3>
+        <p>TypeScript, Docker, REST APIs, Technical Systems Diagnostics & CRM Support</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Quick Overview / Value Proposition -->
+  <section class="section prose-grid">
     <div>
-      <p class="eyebrow">Principles</p>
-      <h2>Readable first, decorative last.</h2>
+      <p class="eyebrow">Overview</p>
+      <h2>Engineering meets operational execution.</h2>
     </div>
-    <div class="feature-list">
-      <article>
-        <h3>Baseline rhythm</h3>
-        <p>Vertical spacing follows a steady cadence for long-form reading.</p>
-      </article>
-      <article>
-        <h3>Typed content</h3>
-        <p>Collections are prepared for project case studies and durable notes.</p>
-      </article>
-      <article>
-        <h3>Keel lines</h3>
-        <p>Fine rules create structure without relying on decorative effects.</p>
-      </article>
+    <div class="prose-stack">
+      <p>
+        Computer Science graduate from UT Arlington with hands-on experience building production data pipelines and full-stack web applications.
+      </p>
+      <p>
+        Focused on building resilient systems that process complex data cleanly and reducing operational friction through clear technical feedback and automation.
+      </p>
+      <p class="cta-link">
+        <a href={withBase('/about/')}>Read full background and experience →</a>
+      </p>
     </div>
-  </section>
-
-  <section class="section index-feed" aria-labelledby="latest-works">
-    <div class="section-heading">
-      <p class="eyebrow">Latest works</p>
-      <h2 id="latest-works">Built records.</h2>
-      <a class="text-link" href={withBase('/works/')}>All works</a>
-    </div>
-
-    {
-      works.length > 0 ? (
-        <div class="highlight-grid">
-          {works.map((work) => (
-            <article class="highlight-card">
-              {work.data.thumbnail && (
-                <Image
-                  src={work.data.thumbnail}
-                  alt=""
-                  width={720}
-                  height={480}
-                  loading="lazy"
-                />
-              )}
-              <div>
-                <p class="meta">{formatDate(work.data.publishDate)}</p>
-                <h3>
-                  <a href={withBase(`/works/${work.id}/`)}>{work.data.title}</a>
-                </h3>
-                <p>{work.data.description}</p>
-                {work.data.tech.length > 0 && (
-                  <ul class="tag-list" aria-label={`${work.data.title} technology`}>
-                    {work.data.tech.slice(0, 4).map((tech) => (
-                      <li>{tech}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state compact">
-          <p>Add works under <code>src/content/works</code> to surface the latest projects here.</p>
-        </div>
-      )
-    }
-  </section>
-
-  <section class="section index-feed" aria-labelledby="latest-notes">
-    <div class="section-heading">
-      <p class="eyebrow">Latest blog</p>
-      <h2 id="latest-notes">Field notes.</h2>
-      <a class="text-link" href={withBase('/blog/')}>All posts</a>
-    </div>
-
-    {
-      posts.length > 0 ? (
-        <div class="note-list">
-          {posts.map((post) => (
-            <article class="note-row">
-              {post.data.heroImage && (
-                <Image
-                  src={post.data.heroImage}
-                  alt=""
-                  width={320}
-                  height={220}
-                  loading="lazy"
-                />
-              )}
-              <div>
-                <p class="meta">{formatDate(post.data.publishDate)}</p>
-                <h3>
-                  <a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a>
-                </h3>
-                <p>{post.data.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state compact">
-          <p>Add blog entries under <code>src/content/blog</code> to surface the latest notes here.</p>
-        </div>
-      )
-    }
   </section>
 </BaseLayout>
+
+<style>
+  .hero-section {
+    padding-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .primary-btn {
+    background-color: var(--color-text, #ffffff);
+    color: var(--color-bg, #111111);
+  }
+
+  .primary-btn:hover {
+    opacity: 0.9;
+  }
+
+  .secondary-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-text, #ffffff);
+  }
+
+  .secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+
+  .cta-link {
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+</style>

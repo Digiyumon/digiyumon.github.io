@@ -2,66 +2,135 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About" description="About the author behind this Astro Keel site.">
-  <section class="page-head section">
-    <p class="eyebrow">About</p>
-    <h1>A measured profile for the person behind the work.</h1>
-    <p class="lead">
-      This page is shaped for a concise biography, a working philosophy, and the handful
-      of details that help readers understand how you think.
-    </p>
+<BaseLayout title="About" description="Career history and background of Alejandro Ojeda-Celis.">
+  <section class="page-head section profile-header">
+    <div class="profile-avatar-container">
+      <img 
+        src="/me.jpg" 
+        alt="Alejandro Ojeda-Celis" 
+        class="profile-avatar"
+      />
+    </div>
+    <div class="profile-intro">
+      <p class="eyebrow">About & Career History</p>
+      <h1>Alejandro Ojeda-Celis</h1>
+      <p class="lead">
+        Computer Science graduate and software engineer based in Arlington, TX. Bilingual in English and Spanish, specializing in data engineering, PostgreSQL database architecture, and operational process optimization.
+      </p>
+    </div>
   </section>
 
+  <!-- Career Timeline / Narrative -->
   <section class="section prose-grid">
     <div>
-      <p class="eyebrow">Profile</p>
-      <h2>Quiet systems, clear writing, durable interfaces.</h2>
+      <p class="eyebrow">Career History</p>
+      <h2>Education to Production</h2>
     </div>
     <div class="prose-stack">
       <p>
-        I work across product strategy, interface systems, and technical writing. The
-        common thread is structure: making complex material easier to scan, trust, and
-        maintain.
+        My technical foundation began at the <strong>University of Texas at Arlington</strong>, where I earned my <strong>Bachelor of Science in Computer Science</strong> (GPA: 3.28/4.0) in August 2024. Through coursework in <em>Algorithms & Data Structures</em>, <em>Database Systems & File Structures</em>, and <em>Artificial Intelligence</em>, I developed a strong core in system design, relational data management, and algorithmic thinking.
       </p>
+
       <p>
-        Astro Keel leaves room for this kind of context without forcing a loud personal
-        brand. Replace this placeholder with a specific background, current role, and
-        the constraints that shape your work.
+        In September 2025, I joined <strong>Hub Financial</strong> as a Commercial Tracking Analyst in Irving, TX. In this role, I designed an Excel tracking architecture to log and analyze document processing speeds, establishing the department's baseline key performance indicators (KPIs). Additionally, I authored detailed technical feedback summaries for the Learning & Development (L&D) team to fix documentation gaps and streamline the onboarding pipeline for new hires.
+      </p>
+
+      <p>
+        Parallel to my enterprise work, I served as a Sports Data Analyst Volunteer for <strong>Next Play Nation Basketball</strong> from October 2025 through January 2026. Working hands-on with operational data, I wrote custom LibreOffice Basic macros to improve score maintenance accuracy by over 40% and built custom spreadsheet formulas that enhanced overall data precision by 24%.
+      </p>
+
+      <p>
+        In April 2026, I transitioned to <strong>Insight</strong> in Fort Worth, TX as a Service Technician. Here, I developed custom Excel scripts to filter, manage, and track real-time completion states for high-volume daily order queues—boosting team throughput. I also led quality control initiatives by updating critical technical documentation, cutting client-side operational errors by over 50%.
       </p>
     </div>
   </section>
 
-  <section class="section" aria-label="Experience summary">
+  <!-- Experience & Education Ledger -->
+  <section class="section" aria-label="Experience ledger">
+    <p class="eyebrow">Timeline Breakdown</p>
     <div class="about-ledger">
       <article>
         <span>01</span>
-        <h3>Current focus</h3>
-        <p>Designing lean content systems, portfolio surfaces, and editorial product pages.</p>
+        <h3>Insight — Service Technician</h3>
+        <p><strong>April 2026 – Present | Fort Worth, TX</strong></p>
+        <p>Engineered daily order tracking scripts and revamped critical documentation to reduce operational error rates by 50%.</p>
       </article>
+
       <article>
         <span>02</span>
-        <h3>Background</h3>
-        <p>Experience spanning frontend implementation, design systems, and writing for technical audiences.</p>
+        <h3>Hub Financial — Commercial Tracking Analyst</h3>
+        <p><strong>Sept 2025 – April 2026 | Irving, TX</strong></p>
+        <p>Architected document processing KPI tracking systems and published L&D feedback summaries to streamline team onboarding.</p>
       </article>
+
       <article>
         <span>03</span>
-        <h3>Contact</h3>
-        <p>Use this section for availability, collaboration preferences, or a direct contact route.</p>
+        <h3>Next Play Nation — Sports Data Analyst (Volunteer)</h3>
+        <p><strong>Oct 2025 – Jan 2026 | Arlington, TX</strong></p>
+        <p>Automated score accuracy (+40%) and data validation (+24%) using LibreOffice Basic macros and custom functions.</p>
+      </article>
+
+      <article>
+        <span>04</span>
+        <h3>UT Arlington — B.S. in Computer Science</h3>
+        <p><strong>Graduated August 2024 | Arlington, TX</strong></p>
+        <p>GPA: 3.28/4.0. Core focus in algorithms, relational database structures, AI, and software engineering principles.</p>
       </article>
     </div>
   </section>
 
+  <!-- Technical Stack Summary -->
   <section class="section prose-grid about-closing">
     <div>
-      <p class="eyebrow">Method</p>
-      <h2>Structure before surface.</h2>
+      <p class="eyebrow">Technical Capabilities</p>
+      <h2>Tools & Ecosystems</h2>
     </div>
     <div class="prose-stack">
       <p>
-        The theme treats the page like a working document: hierarchy first, rhythm second,
-        visual signature third. Fine rules, generous spacing, and type contrast carry the
-        identity without competing with the content.
+        <strong>Languages & Core:</strong> Python, SQL/SQLite, PostgreSQL (Supabase), TypeScript, HTML/CSS, JSON Processing.<br />
+        <strong>Cloud & Data Engineering:</strong> Google Cloud Platform (BigQuery, Cloud Storage), Automated Cron Jobs, REST APIs.<br />
+        <strong>Analytics & Tools:</strong> Tableau, Power BI, Microsoft Excel (Advanced Scripting/Macros), Git, Linux, SAP.<br />
+        <strong>Languages Spoken:</strong> English (Fluent), Spanish (Fluent).
       </p>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 640px) {
+    .profile-header {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  .profile-avatar-container {
+    flex-shrink: 0;
+  }
+
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #1a1a1a;
+  }
+
+  .profile-intro {
+    flex: 1;
+  }
+
+  .about-ledger article p strong {
+    color: var(--color-text, #fff);
+  }
+</style>
