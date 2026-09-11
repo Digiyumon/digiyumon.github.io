@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+---
+
+<BaseLayout title="Photography" description="Film photography portfolio">
+  <section class="section prose-grid">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Film Photography</h1>
+    <p class="mb-6 text-gray-400">
+      A collection of 35mm film shots captured on the Canon AE-1.
+    </p>
+    <p class="mb-4 text-sm text-gray-400">View complete collections and full-resolution sets on Pixieset.</p>
+      <a 
+        href="https://percysphotos.pixieset.com/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style="inline-block bg-orange-600 hover:bg-orange-500 text-white font-semibold text-lg px-8 py-3 rounded-lg shadow-md transition-all duration-200 hover:scale-105"
+        id="open_gallery"
+      >
+        Open Pixieset Gallery →
+      </a>
+      </main>
+    </section>
+      <div class="flex flex-wrap gap-4 my-8 photo_container">
+  <img 
+    src="/photography_tab_photos/9373001-R01-008.jpg" 
+    alt="the goat" 
+    style="max-width: 500px; height: auto;"
+  />
+  <img 
+    src="/photography_tab_photos/9373001-R01-022.jpg" 
+    style="max-width: 500px; height: auto;"
+  />
+  <img 
+    src="/photography_tab_photos/edit1.png" 
+    style="max-width: 500px; height: auto;"
+  />
+  <img 
+    src="/photography_tab_photos/sunset.png" 
+    style="max-width: 500px; height: auto;"
+  />
+  <img 
+    src="/photography_tab_photos/sweetpea.png" 
+    style="max-width: 500px; height: auto;"
+  />
+</div>
+</BaseLayout>
+
+<style>
+.photo_container{
+  min-width:100%
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 200px;
+}
+#open_gallery a{
+  font-size = x-large;
+}
+</style>
+

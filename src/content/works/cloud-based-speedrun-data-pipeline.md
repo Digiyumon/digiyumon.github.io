@@ -8,7 +8,6 @@ tech:
   - Cloud Storage
   - SQL
 github: "https://github.com/Digiyumon/Speedrun.com_api_python_cli"
-repo: "https://github.com/Digiyumon/Speedrun.com_api_python_cli"
 link: "https://github.com/Digiyumon/Speedrun.com_api_python_cli"
 order: 2
 publishDate: 2026-07-15
