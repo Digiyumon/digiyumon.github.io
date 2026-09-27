@@ -21,4 +21,5 @@ export const NAV_ITEMS = [
   { href: '/about/', label: 'About' },
   { href: '/works/', label: 'Projects' }, 
   { href: '/photography/', label: 'Photography' },
+  { href: '/mtg/', label: 'MTG Data Visualization' },
 ] as const;
