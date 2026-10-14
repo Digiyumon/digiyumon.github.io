@@ -45,6 +45,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Certifications Section -->
+  <section class="section prose-grid">
+    <div>
+      <p class="eyebrow">Professional Credentials</p>
+      <h2>Certifications</h2>
+    </div>
+    <div class="prose-stack">
+      <div class="cert-card">
+        <div class="cert-header">
+          <h3>Google Cloud Associate Data Practitioner</h3>
+          <span class="cert-date">Acquired October 12, 2026</span>
+        </div>
+        <p>
+          Validated expertise in securing and managing enterprise data within Google Cloud Platform environments.
+        </p>
+        <p>
+          <strong>Core Competencies:</strong> Cloud Data Ingestion, Data Transformation & Schema Normalization, Pipeline Management, Analytics & Visualization, Machine Learning Workflows, Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS).
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Experience & Education Ledger -->
   <section class="section" aria-label="Experience ledger">
     <p class="eyebrow">Timeline Breakdown</p>
@@ -94,6 +116,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
     </div>
   </section>
+
+  <!-- Hobbies & Interests -->
+  <section class="section prose-grid">
+    <div>
+      <p class="eyebrow">Beyond Engineering</p>
+      <h2>Hobbies & Interests</h2>
+    </div>
+    <div class="prose-stack">
+      <p>
+        <strong>Fighting Games & Competitive Travel:</strong> Passionate competitor in the fighting game community. I love traveling with my friends to drown in pools. Specifically in UMVC3, SF6, 2XKO, and basically any game I'm interested in at the time. 
+      </p>
+      <p>
+        <strong>Trading Card Games:</strong> Longtime player and collector of TCGs, primarily <em>Magic: The Gathering</em> and <em>Yu-Gi-Oh!</em>. Beyond playing, I love to look at old cards and see how much each game has changed over the years. 
+      </p>
+      <p>
+        <strong>Film Photography:</strong> I shoot manual analog film photography because I believe it's a beautiful medium to capture special moments in life. You can check out my latest shots and visual work over on the <a href="/photography/" class="underline hover:text-white transition-colors">Photography tab</a>!
+      </p>
+      <p>
+        <strong>UFC:</strong> Thanks to my girlfriend i'm now a big fan of watching UFC, we always tune in to big fight nights (huge fan of Paddy "The Baddy" Pimblett).
+      </p>
+      <p>
+        <strong>Media Collecting:</strong> I love to collect all sorts of physical media. Right now it's mainly been VHS tapes as well as video games. Mainly for the XBOX 360, PS2, Wii and Gamecube!
+      </p>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -132,5 +179,36 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .about-ledger article p strong {
     color: var(--color-text, #fff);
+  }
+
+  .cert-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .cert-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .cert-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  .cert-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .cert-date {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
   }
 </style>
