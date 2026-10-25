@@ -15,7 +15,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <p class="eyebrow">About & Career History</p>
       <h1>Alejandro Ojeda-Celis</h1>
       <p class="lead">
-        Computer Science graduate and software engineer based in Arlington, TX. Bilingual in English and Spanish, specializing in data engineering, PostgreSQL database architecture, and operational process optimization.
+        Computer Science graduate, MLT Career Prep Fellow, and software engineer based in Arlington, TX. Bilingual in English and Spanish, specializing in data engineering, PostgreSQL database architecture, and operational process optimization.
       </p>
     </div>
   </section>
@@ -45,13 +45,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Certifications & Leadership Credentials Section -->
   <section class="section prose-grid">
     <div>
       <p class="eyebrow">Professional Credentials</p>
-      <h2>Certifications</h2>
+      <h2>Certifications & Fellowships</h2>
     </div>
     <div class="prose-stack">
+      <div class="cert-card">
+        <div class="cert-header">
+          <h3>Management Leaders for Tomorrow (MLT)</h3>
+          <span class="cert-date">Career Prep Fellow</span>
+        </div>
+        <p>
+          Selected for a highly competitive national leadership and career development fellowship for high-achieving leaders.
+        </p>
+        <p>
+          <strong>Core Focus:</strong> Executive Leadership Training, Technical Case Analysis, Strategic Problem Solving, and Industry Engagement.
+        </p>
+      </div>
+
       <div class="cert-card">
         <div class="cert-header">
           <h3>Google Cloud Associate Data Practitioner</h3>
@@ -80,20 +93,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <article>
         <span>02</span>
+        <h3>Management Leaders for Tomorrow — Career Prep Fellow</h3>
+        <p><strong>Fellowship | National Program</strong></p>
+        <p>Selected for rigorous leadership development, technical preparation, and executive career coaching.</p>
+      </article>
+
+      <article>
+        <span>03</span>
         <h3>Hub Financial — Commercial Tracking Analyst</h3>
         <p><strong>Sept 2025 – April 2026 | Irving, TX</strong></p>
         <p>Architected document processing KPI tracking systems and published L&D feedback summaries to streamline team onboarding.</p>
       </article>
 
       <article>
-        <span>03</span>
+        <span>04</span>
         <h3>Next Play Nation — Sports Data Analyst (Volunteer)</h3>
         <p><strong>Oct 2025 – Jan 2026 | Arlington, TX</strong></p>
         <p>Automated score accuracy (+40%) and data validation (+24%) using LibreOffice Basic macros and custom functions.</p>
       </article>
 
       <article>
-        <span>04</span>
+        <span>05</span>
         <h3>UT Arlington — B.S. in Computer Science</h3>
         <p><strong>Graduated August 2024 | Arlington, TX</strong></p>
         <p>GPA: 3.28/4.0. Core focus in algorithms, relational database structures, AI, and software engineering principles.</p>
@@ -186,6 +206,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .cert-header {
